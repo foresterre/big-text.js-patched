@@ -1,26 +1,27 @@
 {
-  "name": "big-text.js",
+  "name": "big-text.js-patched",
   "version": "1.0.1",
-  "description": "A lib that makes text as big as possible while still fitting on the parent element.",
+  "description": "A lib that makes text as big as possible while still fitting on the parent element. (Patched for strict mode in the browser)",
   "main": "big-text.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BrOrlandi/big-text.js.git"
+    "url": "git+https://github.com/foresterre/big-text.js-patched.git"
   },
   "keywords": [
     "bigtext",
     "text"
   ],
   "contributors": [
-    "Daniel Hoffmann Bernardes"
+    "Daniel Hoffmann Bernardes",
+    "Chris Langhout",
+    "foresterre",
   ],
   "author": "Bruno Orlandi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/BrOrlandi/big-text.js/issues"
-  },
-  "homepage": "https://brorlandi.github.io/big-text.js"
+    "url": "https://github.com/foresterre/big-text.js-patched/issues"
+  }
 }
