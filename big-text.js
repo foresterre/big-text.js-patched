@@ -16,7 +16,7 @@ BigText("#myElement",{
 });
 
 
-Original Projects: 
+Original Projects:
 https://github.com/DanielHoffmann/jquery-bigtext
 https://github.com/Jetroid/bigtext.js
 
@@ -81,7 +81,7 @@ function _calculateInnerDimensions(computedStyle){
 	return obj;
 }
 
-BigText = function(element, options){
+var BigText = function(element, options){
 
 	if (typeof element === 'string') {
 		element = document.querySelector(element);
@@ -100,23 +100,23 @@ BigText = function(element, options){
 		textAlign: "center",
 		whiteSpace: "nowrap"
 	};
-	
+
 	//Merge provided options and default options
 	options = options || {};
 	for (var opt in defaultOptions)
 		if (defaultOptions.hasOwnProperty(opt) && !options.hasOwnProperty(opt))
 			options[opt] = defaultOptions[opt];
-	
+
 	//Get variables which we will reference frequently
 	var style = element.style;
 	var computedStyle = document.defaultView.getComputedStyle(element);
 	var parent = element.parentNode;
 	var parentStyle = parent.style;
 	var parentComputedStyle = document.defaultView.getComputedStyle(parent);
-	
+
 	//hides the element to prevent "flashing"
 	style.visibility = "hidden";
-	
+
 	//Set some properties
 	style.display = "inline-block";
 	style.clear = "both";
@@ -149,13 +149,13 @@ BigText = function(element, options){
 	var parentInnerDimensions = _calculateInnerDimensions(parentComputedStyle);
 	var parentInnerWidth = parentInnerDimensions["width"];
 	var parentInnerHeight = parentInnerDimensions["height"];
-	
+
 	var box = {
 		width: element.offsetWidth, //Note: This is slightly larger than the jQuery version
 		height: element.offsetHeight,
 	};
 
-	
+
 	if (options.rotateText !== null) {
 		if (typeof options.rotateText !== "number")
 			throw "bigText error: rotateText value must be a number";
@@ -171,7 +171,7 @@ BigText = function(element, options){
 		box.width = element.offsetWidth * cosine + element.offsetHeight * sine;
 		box.height = element.offsetWidth * sine + element.offsetHeight * cosine;
 	}
-	
+
 	var widthFactor = (parentInnerWidth - parentPadding.left - parentPadding.right) / box.width;
 	var heightFactor = (parentInnerHeight - parentPadding.top - parentPadding.bottom) / box.height;
 	var lineHeight;
